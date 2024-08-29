@@ -27,7 +27,9 @@ local plugins = {
     { 'catppuccin/nvim', name = 'catppuccin' },
     --状态栏
     { 'nvim-lualine/lualine.nvim', },
-
+    -- 彩虹括号
+    { 'hiphish/rainbow-delimiters.nvim' },
+    
     --功能 `plugins.func`
     --文件可视化
     { 'nvim-tree/nvim-tree.lua', lazy = false, },
@@ -41,7 +43,7 @@ local plugins = {
     --lsp `plugins.lsp`
     {
       'hrsh7th/nvim-cmp', dependencies = {
-      'lspkind.nvim',
+      'onsails/lspkind.nvim',
       'hrsh7th/cmp-nvim-lsp',		-- lsp auto-completion
       'hrsh7th/cmp-buffer',		-- buffer auto-completion
       'hrsh7th/cmp-path',		-- path auto-completion
@@ -60,3 +62,4 @@ local plugins = {
 }
 
 require('lazy').setup(plugins)
+
