@@ -19,8 +19,10 @@ map('n', '<C-n>', '<C-i>', opt)
 map('n', '<leader>n', ':noh<CR>', opt)
 --cv
 map('x', '<C-c>', '"+y', opf)
+map('x', '<C-S-c>', '"+y', opf)
 map('x', '<C-v>', '"+p', opf)
 map('i', '<C-v>', '<Esc>"+p', opf)
+map('i', '<C-S-v>', '<Esc>"+p', opf)
 
 
 -- 插件配置 ------------------------------------
@@ -128,4 +130,7 @@ vim.g.nvimgdb_config_override = {
     codewin_command	= 'vnew',
 }
 
+map('n', '<leader>t', ':ToggleTerm<CR>', opf)
+
 return pluginKeys
+

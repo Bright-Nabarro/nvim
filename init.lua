@@ -1,8 +1,7 @@
 ---- nvim configure
 
 require 'basic'
-require 'keymap'
-
 require 'plugins'
-
+require 'keymap'
 require 'scheme'
+

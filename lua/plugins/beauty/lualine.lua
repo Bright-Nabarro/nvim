@@ -1,9 +1,19 @@
+local sept = {}
+
+if vim.g.neovide then
+    sept.component = { left = '', right = '' }
+    sept.section = { left = '|', right = '|' }
+else
+    sept.component = { left = '', right = ''}
+    sept.section = { left = '', right = ''}
+end
+
 require('lualine').setup {
     options = {
 	icons_enabled = true,
 	theme = 'auto',
-      	component_separators = { left = '', right = ''},
-      	section_separators = { left = '', right = ''},
+      	component_separators = sept.component,
+      	section_separators = sept.section,
       	disabled_filetypes = {
 	    statusline = {},
 	    winbar = {},
