@@ -113,6 +113,7 @@ pluginKeys.maplsp = function(client, bufnr)
 end, opts)
 end
 
+--[[
 --nvim-gdb
 vim.g.nvimgdb_disable_start_keymaps = 1
 map('n', '<leader>b', '<Cmd>GdbBreakpointToggle<Cr>', opt)
@@ -129,8 +130,42 @@ vim.g.nvimgdb_config_override = {
 	termwin_command	= 'belowright vnew',
     codewin_command	= 'vnew',
 }
+<<<<<<< HEAD
 
 map('n', '<leader>t', ':ToggleTerm<CR>', opf)
 
 return pluginKeys
+
+]]--
+
+-- 浮动终端
+map('n', '<leader>t', ':ToggleTerm<CR>', opf)
+
+--telescope
+local telescope = require 'telescope.builtin'
+set('n', '<leader>ff', telescope.find_files, {})
+set('n', '<leader>fg', telescope.live_grep, {})
+set('n', '<leader>fb', telescope.buffers, {})
+set('n', '<leader>fh', telescope.help_tags, {})
+
+
+local dap = require 'dap'
+local dapui = require 'dapui'
+--dap
+set('n', '<F5>', function() dap.continue() end, {})
+set('n', '<F6>', function()
+	dap.terminate()
+	dap.disconnect({ terminateDebuggee = true })
+	dap.close()
+end, {})
+set('n', '<leader>b', function() dap.toggle_breakpoint() end, {})
+set('n', '<leader>B', function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, {})
+set('n', '<leader>lp',function() dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: ")) end, {})
+set('n', '<leader>dl',function() dap.run_last() end, {})
+set('n', '<leader>dr',function() dap.repl.open() end, {})
+set('n', '<leader>dq', function() dapui.close() end, {})
+set('n', '<leader>dk', function() dapui.eval() end, {})
+
+return pluginKeys
+
 

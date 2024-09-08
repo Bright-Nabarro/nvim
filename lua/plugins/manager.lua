@@ -25,6 +25,9 @@ require('lazy').setup{
     { 'nvim-tree/nvim-web-devicons' },
     --git状态
     { 'lewis6991/gitsigns.nvim' },
+	{ "nvim-neotest/nvim-nio" },
+    { 'nvim-tree/nvim-web-devicons' },
+
     --美化 `plugins.beauty`
     --主题配色
     { 'catppuccin/nvim', name = 'catppuccin' },
@@ -33,17 +36,32 @@ require('lazy').setup{
     -- 彩虹括号
     { 'hiphish/rainbow-delimiters.nvim' },
     
+    -- 弹窗
+    { 'rcarriga/nvim-notify' },
+	{ 'folke/noice.nvim' },
+
     --功能 `plugins.func`
     --文件可视化
     { 'nvim-tree/nvim-tree.lua', lazy = false, },
     --标签页
     { 'romgrk/barbar.nvim' },
     --调试
-    { 'sakhnik/nvim-gdb' },
+    -- { 'sakhnik/nvim-gdb' },
+	{ 'mfussenegger/nvim-dap', dependencies = {
+	  'rcarriga/nvim-dap-ui',
+  	  'theHamsta/nvim-dap-virtual-text',
+  	  'nvim-telescope/telescope-dap.nvim'},
+  	},
+
     --surround
     { 'kylechui/nvim-surround', event = "VeryLazy" },
     --浮动终端
     { 'akinsho/toggleterm.nvim' },
+    --查找
+    {
+      'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = {
+	  'nvim-lua/plenary.nvim' },
+    },
 
     --lsp `plugins.lsp`
     {
@@ -63,6 +81,7 @@ require('lazy').setup{
 	-- 函数补全
 	{ 'ray-x/lsp_signature.nvim', event = "VeryLazy",},
     --语法高亮
-	{ 'nvim-treesitter/nvim-treesitter' },
+	-- { 'nvim-treesitter/nvim-treesitter' },
 }
+
 
