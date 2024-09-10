@@ -113,15 +113,14 @@ pluginKeys.maplsp = function(client, bufnr)
 end, opts)
 end
 
---[[
 --nvim-gdb
 vim.g.nvimgdb_disable_start_keymaps = 1
 map('n', '<leader>b', '<Cmd>GdbBreakpointToggle<Cr>', opt)
 vim.g.nvimgdb_config_override = {
 	--disable
-	key_frameup 	= '<leader>pp',
-	key_framedown 	= '<leader>dd',
-    key_eval 		= '<leader>114514',
+	key_frameup 	= '<leader>disable1',
+	key_framedown 	= '<leader>disable2',
+    key_eval 		= '<leader>disable3',
 	--setting
 	key_next 		= '<F9>',
 	key_step 		= '<F10>',
@@ -130,13 +129,6 @@ vim.g.nvimgdb_config_override = {
 	termwin_command	= 'belowright vnew',
     codewin_command	= 'vnew',
 }
-<<<<<<< HEAD
-
-map('n', '<leader>t', ':ToggleTerm<CR>', opf)
-
-return pluginKeys
-
-]]--
 
 -- 浮动终端
 map('n', '<leader>t', ':ToggleTerm<CR>', opf)
@@ -148,7 +140,7 @@ set('n', '<leader>fg', telescope.live_grep, {})
 set('n', '<leader>fb', telescope.buffers, {})
 set('n', '<leader>fh', telescope.help_tags, {})
 
-
+--[[
 local dap = require 'dap'
 local dapui = require 'dapui'
 --dap
@@ -165,6 +157,11 @@ set('n', '<leader>dl',function() dap.run_last() end, {})
 set('n', '<leader>dr',function() dap.repl.open() end, {})
 set('n', '<leader>dq', function() dapui.close() end, {})
 set('n', '<leader>dk', function() dapui.eval() end, {})
+]]--
+
+-- notify
+-- 设置快捷键关闭悬浮通知
+set("n", "<Esc>", function() require("notify").dismiss() end, {})
 
 return pluginKeys
 

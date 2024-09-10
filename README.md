@@ -7,7 +7,6 @@ git clone https://github.com/Bright-Nabarro/nvim.git
 ```
 
 - 快捷键映射在 `lua/keymap.lua` 中
-- `dap`调试重启后存在`Error ... notStop`报错，如果之后出现异常需要重启nvim
 
 ```
 nvim/
