@@ -135,10 +135,10 @@ map('n', '<leader>t', ':ToggleTerm<CR>', opf)
 
 --telescope
 local telescope = require 'telescope.builtin'
-set('n', '<leader>ff', telescope.find_files, {})
-set('n', '<leader>fg', telescope.live_grep, {})
-set('n', '<leader>fb', telescope.buffers, {})
-set('n', '<leader>fh', telescope.help_tags, {})
+set('n', 'ff', telescope.find_files, {})
+set('n', 'fg', telescope.live_grep, {})
+set('n', 'fb', telescope.buffers, {})
+set('n', 'fh', telescope.help_tags, {})
 
 --[[
 local dap = require 'dap'
