@@ -116,6 +116,8 @@ end
 --nvim-gdb
 vim.g.nvimgdb_disable_start_keymaps = 1
 map('n', '<leader>b', '<Cmd>GdbBreakpointToggle<Cr>', opt)
+cmd('Gdb', 'GdbStart gdb', {})
+cmd('Lldb', 'GdbStartLLDB lldb', {})
 vim.g.nvimgdb_config_override = {
 	--disable
 	key_frameup 	= '<leader>disable1',
@@ -158,6 +160,7 @@ set('n', '<leader>dr',function() dap.repl.open() end, {})
 set('n', '<leader>dq', function() dapui.close() end, {})
 set('n', '<leader>dk', function() dapui.eval() end, {})
 ]]--
+
 
 -- notify
 -- 设置快捷键关闭悬浮通知
