@@ -241,15 +241,11 @@ local lazyConfig = {
   	--  'nvim-telescope/telescope-dap.nvim'},
   	--},
 	{
-	  "iamcco/markdown-preview.nvim",
-	  cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-	  build = "cd app && yarn install",
-	  init = function()
-	    vim.g.mkdp_filetypes = { "markdown" }
-	  end,
-	  ft = { "markdown" },
+	    "iamcco/markdown-preview.nvim",
+	    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+	    ft = { "markdown" },
+	    build = function() vim.fn["mkdp#util#install"]() end,
 	},
-
     --surround
     { 'kylechui/nvim-surround', event = "VeryLazy" },
     --浮动终端
@@ -259,7 +255,12 @@ local lazyConfig = {
       'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = {
 	  'nvim-lua/plenary.nvim' },
     },
+	{
+	  'chomosuke/term-edit.nvim',
+      lazy = false, -- or ft = 'toggleterm' if you use toggleterm.nvim
+      version = '1.*',
 
+	},
     --lsp `plugins.lsp`
     {
       'hrsh7th/nvim-cmp', dependencies = {

@@ -11,8 +11,8 @@ local cmd = vim.api.nvim_create_user_command
 --设置<leader>键
 vim.g.mapleader = ','
 
--- 切屏(wsl中<C-w>容易误触关闭窗口)
-map('n', '<C-i>', '<C-w>', opf)
+-- 切屏
+-- map('n', '<C-i>', '<C-w>', opf)
 -- 撤销跳转
 map('n', '<C-n>', '<C-i>', opt)
 --取消搜索高亮
