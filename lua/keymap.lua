@@ -116,8 +116,8 @@ end
 --nvim-gdb
 vim.g.nvimgdb_disable_start_keymaps = 1
 map('n', '<leader>b', '<Cmd>GdbBreakpointToggle<Cr>', opt)
-cmd('Gdb', 'GdbStart gdb', {})
-cmd('Lldb', 'GdbStartLLDB lldb', {})
+cmd('Dgdb', 'GdbStart gdb', {})
+cmd('Dlldb', 'GdbStartLLDB lldb', {})
 vim.g.nvimgdb_config_override = {
 	--disable
 	key_frameup 	= '<leader>disable1',
