@@ -164,7 +164,7 @@ set('n', '<leader>dk', function() dapui.eval() end, {})
 
 -- notify
 -- 设置快捷键关闭悬浮通知
-set("n", "<Esc>", function() require("notify").dismiss() end, {})
+-- set("n", "<Esc>", function() require("notify").dismiss() end, {})
 
 return pluginKeys
 

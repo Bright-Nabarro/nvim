@@ -225,7 +225,7 @@ local lazyConfig = {
     { 'hiphish/rainbow-delimiters.nvim' },
     
     -- 弹窗
-    { 'rcarriga/nvim-notify' },
+    -- { 'rcarriga/nvim-notify' },
 	{ 'folke/noice.nvim' },
 
     --功能 `plugins.func`
