@@ -23,7 +23,7 @@ vim.o.wrap = false
 --启用终端颜色
 vim.opt.termguicolors = true
 --添加系统剪贴板
-vim.opt.clipboard = "unnamed"
+-- vim.opt.clipboard = "unnamed"
 
 if vim.g.neovide then
     vim.o.guifont = "Maple Mono SC NF:h12"
