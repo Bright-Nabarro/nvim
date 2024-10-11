@@ -1,5 +1,6 @@
 local settingServers = {
     'clangd',
+	'cmake',
 }
 
 --mason 管理补全插件
