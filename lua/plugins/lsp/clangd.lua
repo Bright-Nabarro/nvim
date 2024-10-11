@@ -12,12 +12,13 @@ require('lspconfig').clangd.setup{
 		'--clang-tidy',
     	'--completion-style=detailed', 	--提供补全信息
 		'--cross-file-rename=true',	--跨文件重命名
-    	'--query-driver=gcc', --指定使用编译器
+		--'--query-driver=gcc', --指定使用编译器
     	'--all-scopes-completion',	--启用所有作用域代码补全
 		'--background-index', --后台索引
 		'--inlay-hints',
     },
     initialization_options = {
-        fallback_flags = { "-std=c++20" },
+        --fallback_flags = { "-std=c++20" },
     },
 }
+

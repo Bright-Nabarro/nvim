@@ -56,3 +56,11 @@ if vim.g.neovide then
     })
 
 end
+
+--配置特定文件的打开类型
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+  pattern = {"*.in", "*.h.in"},
+  callback = function()
+    vim.bo.filetype = "plaintext"
+  end,
+})

@@ -27,7 +27,7 @@ cmp.setup({
     formatting = {
         format = lspkind.cmp_format({
 	        mode = 'symbol',		--只显示图标
-	        maxwidth = 50,		--最大宽度
+	        maxwidth = 50,			--最大宽度
 	        ellipsis_char = '...',	--省略字符
 	        before = before,		--自定义菜单项符号映射
 	    }),
@@ -35,7 +35,7 @@ cmp.setup({
 
     -- 设置补全来源的优先级
     sources = cmp.config.sources({
-        { name = 'nvim_lsp', max_item_count=12 },
+        { name = 'nvim_lsp' --[[, max_item_count=12 ]]},
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'path' },
