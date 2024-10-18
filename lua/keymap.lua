@@ -102,8 +102,8 @@ pluginKeys.maplsp = function(client, bufnr)
 		    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 		end, opt)
     --格式化
-    -- 设置 Alt+Shift+F 格式化选中的范围
-    vim.keymap.set('v', '<A-S-f>', function()
+    -- 设置格式化选中的范围
+    vim.keymap.set('v', '<leader><leader>', function()
         -- 使用 vim.lsp.buf.format 对选中的代码进行格式化
         vim.lsp.buf.format({ range = {
             start = {vim.fn.line("v"), vim.fn.col("v")},
