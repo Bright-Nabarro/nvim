@@ -14,7 +14,6 @@ require('mason').setup({
 })
 
 local ensureServers = {
-	'cmake'
 }
 
 require('mason-lspconfig').setup({
@@ -22,7 +21,6 @@ require('mason-lspconfig').setup({
 })
 
 local autoServers = {
-	'cmake'
 }
 
 local lspconfig = require('lspconfig')

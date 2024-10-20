@@ -223,6 +223,8 @@ local lazyConfig = {
     { 'nvim-lualine/lualine.nvim', },
     -- 彩虹括号
     { 'hiphish/rainbow-delimiters.nvim' },
+	-- git diff
+	{ 'lewis6991/gitsigns.nvim' },
     
     -- 弹窗
     -- { 'rcarriga/nvim-notify' },
