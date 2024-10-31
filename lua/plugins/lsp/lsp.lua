@@ -39,3 +39,9 @@ for _, lsp in ipairs(autoServers) do
     	on_attach = on_attach,
 	}
 end
+
+-- 签名边框
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = "rounded" -- 可以是 "rounded", "single", "double", "shadow" 等样式
+})
+
