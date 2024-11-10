@@ -24,6 +24,7 @@ map('x', '<C-v>', '"+p', opf)
 map('i', '<C-v>', '<Esc>"+p', opf)
 map('i', '<C-S-v>', '<Esc>"+p', opf)
 
+cmd('Pwd', "echo expand('%:p:h')", {})
 
 -- 插件配置 ------------------------------------
 local pluginKeys = {}
