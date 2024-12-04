@@ -45,3 +45,8 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = "rounded" -- 可以是 "rounded", "single", "double", "shadow" 等样式
 })
 
+vim.diagnostic.config({
+  float = {
+    border = "rounded", -- 设置诊断浮动窗口的边框样式
+  }
+})

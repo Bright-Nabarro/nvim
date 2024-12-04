@@ -39,5 +39,9 @@ cmp.setup({
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'path' },
-    })
+    }),
+	window = {
+		completion = cmp.config.window.bordered(), -- 补全边框
+    	documentation = cmp.config.window.bordered(), -- 文档窗口边框
+	},
 })
