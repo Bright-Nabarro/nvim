@@ -9,6 +9,7 @@ require('nvim-tree').setup({
     -- git支持
     git = {
         enable = true,
+		ignore = false
     },
 	renderer = { icons = {
     	web_devicons = {

@@ -7,7 +7,7 @@ require('lspconfig').clangd.setup{
     on_attach = on_attach,
 	filetypes = {'c', 'h', 'cpp', 'hpp', 'cc', 'hxx', 'cppm', 'ixx', 'mxx', 'objcpp', 'objc'},
     cmd = {
-		'clangd',
+		'/usr/bin/clangd',
 		'--header-insertion=never',	--禁止自动插入头文件
 		'--clang-tidy',
     	'--completion-style=detailed', 	--提供补全信息

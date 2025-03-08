@@ -246,7 +246,7 @@ local lazyConfig = {
 	    "iamcco/markdown-preview.nvim",
 	    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 	    ft = { "markdown" },
-	    build = function() vim.fn["mkdp#util#install"]() end,
+  		build = "cd app && yarn install",
 	},
     --surround
     { 'kylechui/nvim-surround', event = "VeryLazy" },
