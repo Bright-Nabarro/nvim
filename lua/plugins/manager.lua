@@ -263,9 +263,6 @@ local lazyConfig = {
       version = '1.*',
 
 	},
-	{
-	  'ojroques/vim-oscyank',
-	},
     --lsp `plugins.lsp`
     {
       'hrsh7th/nvim-cmp', dependencies = {
