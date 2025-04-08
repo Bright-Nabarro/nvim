@@ -24,6 +24,7 @@ local autoServers = {
 }
 
 local lspconfig = require('lspconfig')
+
 -- 包装keymap
 local on_attach = function(client, bufnr)
     require('keymap').maplsp(client, bufnr)
@@ -41,9 +42,13 @@ for _, lsp in ipairs(autoServers) do
 end
 
 -- 签名边框
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "rounded" -- 可以是 "rounded", "single", "double", "shadow" 等样式
-})
+local _hover = vim.lsp.buf.hover
+vim.lsp.buf.hover = function(opts)
+  opts = opts or {}
+  opts.border = opts.border or 'rounded'
+  return _hover(opts)
+end
+
 
 vim.diagnostic.config({
   float = {
