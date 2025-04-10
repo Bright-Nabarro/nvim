@@ -77,10 +77,8 @@ vim.filetype.add({
 })
 
 local function paste()
-  return {
-    vim.fn.split(vim.fn.getreg(""), "\n"),
-    vim.fn.getregtype(""),
-  }
+	return vim.fn.getreg("+")
+
 end
 
 vim.g.clipboard = {
@@ -90,7 +88,7 @@ vim.g.clipboard = {
     ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
   },
   paste = {
-    ["+"] = paste,
-    ["*"] = paste,
+    ["+"] = vim.fn.getreg("+"),
+    ["*"] = vim.fn.getreg("*"),
   },
 }
