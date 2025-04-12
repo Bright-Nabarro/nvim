@@ -236,7 +236,7 @@ local lazyConfig = {
     --标签页
     { 'romgrk/barbar.nvim' },
     --调试
-    -- { 'sakhnik/nvim-gdb' },
+    { 'sakhnik/nvim-gdb' },
 	{ 'mfussenegger/nvim-dap', dependencies = {
 	  'rcarriga/nvim-dap-ui',
   	  'theHamsta/nvim-dap-virtual-text',
