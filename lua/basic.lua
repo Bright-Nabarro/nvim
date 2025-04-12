@@ -32,10 +32,17 @@ vim.g.termfeatures = termfeatures
 if vim.g.neovide then
     vim.o.guifont = "Maple Mono SC NF:h12"
     vim.opt.linespace = 0
-    vim.g.neovide_cursor_vfx_mode = "wireframe"
-    vim.g.neovide_transparency = 0.9 
+    --vim.g.neovide_cursor_vfx_mode = "wireframe"
+	vim.g.neovide_opacity = 0.9
+    --vim.g.neovide_transparency = 0.9 
     vim.g.neovide_input_ime = true
-    vim.g.neovide_scroll_animation_length = 0.2
+    vim.g.neovide_scroll_animation_length = 0.15
+	vim.g.neovide_cursor_trail_size = 0.7
+
+	vim.g.neovide_title_background_color = string.format(
+    	vim.api.nvim_get_hl(0, {id=vim.api.nvim_get_hl_id_by_name("Normal")}).bg
+	)
+	vim.g.neovide_title_text_color = "#94afe0"
 
     local function set_ime(args)
         if args.event:match("Enter$") then

@@ -32,11 +32,10 @@ dap.configurations.cpp = {
 
 dap.configurations.c = dap.configurations.cpp
 
--- 配置 nvim-dap-ui
-require("dapui").setup()
-
 -- 自动打开/关闭 nvim-dap-ui
 local dapui = require("dapui")
+dapui.setup();
+
 dap.listeners.before.attach.dapui_config = function()
   dapui.open()
 end

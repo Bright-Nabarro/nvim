@@ -125,6 +125,7 @@ end, opts)
 end
 
 --nvim-gdb
+--[[
 vim.g.nvimgdb_disable_start_keymaps = 1
 map('n', '<leader>b', '<Cmd>GdbBreakpointToggle<Cr>', opt)
 cmd('Dgdb', function(args)
@@ -145,6 +146,7 @@ vim.g.nvimgdb_config_override = {
 	termwin_command	= 'belowright vnew',
     codewin_command	= 'vnew',
 }
+--]]
 
 -- 浮动终端
 map('n', '<leader>t', ':ToggleTerm<CR>', opf)
@@ -156,7 +158,6 @@ set('n', 'fg', telescope.live_grep, {})
 set('n', 'fb', telescope.buffers, {})
 set('n', 'fh', telescope.help_tags, {})
 
---[[
 local dap = require 'dap'
 local dapui = require 'dapui'
 --dap
@@ -173,7 +174,6 @@ set('n', '<leader>dl',function() dap.run_last() end, {})
 set('n', '<leader>dr',function() dap.repl.open() end, {})
 set('n', '<leader>dq', function() dapui.close() end, {})
 set('n', '<leader>dk', function() dapui.eval() end, {})
-]]--
 
 
 -- notify
