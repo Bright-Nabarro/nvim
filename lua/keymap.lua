@@ -125,7 +125,6 @@ end, opts)
 end
 
 --nvim-gdb
-vim.g.nvimgdb_disable_start_keymaps = 1
 map('n', '<leader>b', '<Cmd>GdbBreakpointToggle<Cr>', opt)
 cmd('Dgdb', function(args)
     local cmd = 'GdbStart gdb ' .. table.concat(args.fargs, ' ')
@@ -134,9 +133,10 @@ end, { nargs = '*' })
 cmd('Dlldb', 'GdbStartLLDB lldb', {})
 vim.g.nvimgdb_config_override = {
 	--disable
-	key_frameup 	= '<leader>disable1',
-	key_framedown 	= '<leader>disable2',
-    key_eval 		= '<leader>disable3',
+	key_frameup 	= '<leader>dkey_frameup',
+	key_framedown 	= nil,
+    key_eval 		= nil,
+
 	--setting
 	key_next 		= '<F9>',
 	key_step 		= '<F10>',
@@ -156,10 +156,10 @@ set('n', 'fg', telescope.live_grep, {})
 set('n', 'fb', telescope.buffers, {})
 set('n', 'fh', telescope.help_tags, {})
 
+--[[
 local dap = require 'dap'
 local dapui = require 'dapui'
 --dap
---[[
 set('n', '<F5>', function() dap.continue() end, {})
 set('n', '<F6>', function()
 	dap.terminate()
