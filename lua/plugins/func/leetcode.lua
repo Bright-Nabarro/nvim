@@ -36,7 +36,8 @@ require('leetcode').setup({
 
     injector = {
 		["python3"] = {
-			before = true
+			before = true,
+			after = "s = Solution()\n",
 		},
 		["cpp"] = {
         	before =  { "#include \"../cvn.hpp\"" },
