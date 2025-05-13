@@ -4,7 +4,7 @@ local leetcode_path
 if my_utils.is_wsl() then
 	leetcode_path = "~/workspace/contest/leetcode/question"
 else
-	leetcode_path = "~/Workspace/contest/leetcode/question"
+	leetcode_path = "~/Workspace/context/leetcode/question"
 end
 
 require('leetcode').setup({
