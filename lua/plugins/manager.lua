@@ -274,6 +274,9 @@ local lazyConfig = {
       },
 	  cmd = "Leet",
 	},
+	{
+	  "3rd/image.nvim",
+	},
 
     --lsp `plugins.lsp`
     {
