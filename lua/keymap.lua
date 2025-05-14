@@ -131,7 +131,10 @@ cmd('Dgdb', function(args)
     vim.cmd(cmd)
 end, { nargs = '*' })
 cmd('Dlldb', 'GdbStartLLDB lldb', {})
-cmd('Dpdb', 'GdbStartPDB python -m pdb "'..vim.api.nvim_buf_get_name(0)..'"', {})
+cmd('Dpdb', function()
+	local cmd = 'GdbStartPDB python -m pdb '..vim.api.nvim_buf_get_name(0)
+	vim.cmd(cmd)
+end, {})
 vim.g.nvimgdb_config_override = {
 	--disable
 	key_frameup 	= '<leader>dkey_frameup',
@@ -152,6 +155,7 @@ cmd('Let', 'Leet test', {})
 cmd('Lec', 'Leet console', {})
 cmd('Ler', 'Leet submit', {})
 cmd('Lel', 'Leet lang', {})
+cmd('Led', 'Leet desc', {})
 
 -- 浮动终端
 map('n', '<leader>t', ':ToggleTerm<CR>', opf)
