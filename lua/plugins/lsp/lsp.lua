@@ -1,6 +1,7 @@
 local settingServers = {
     'clangd',
 	'cmake',
+	'rust',
 }
 --mason 管理补全插件
 require('mason').setup({

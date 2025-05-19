@@ -292,6 +292,12 @@ local lazyConfig = {
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
     { 'neovim/nvim-lspconfig' },
+	-- rust补丁
+	--{
+	--  'mrcjkb/rustaceanvim',
+	--  version = '^6', -- Recommended
+	--  lazy = false, -- This plugin is already lazy
+	--},
 	-- 函数补全
 	{ 'ray-x/lsp_signature.nvim', event = "VeryLazy",},
     --语法高亮
