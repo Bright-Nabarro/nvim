@@ -79,7 +79,7 @@ end
 vim.filetype.add({
 	extension = {
 		ixx = "cpp",
-		h = "c",
+		--h = "c",
 	},
 })
 

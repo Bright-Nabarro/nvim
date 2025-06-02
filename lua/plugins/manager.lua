@@ -225,6 +225,14 @@ local lazyConfig = {
     { 'hiphish/rainbow-delimiters.nvim' },
 	-- git diff
 	{ 'lewis6991/gitsigns.nvim' },
+	-- 代码块
+	{
+	  "lukas-reineke/indent-blankline.nvim",
+	  main = "ibl",
+	  ---@module "ibl"
+	  ---@type ibl.config
+	  opts = {},
+	},
     
     -- 弹窗
     -- { 'rcarriga/nvim-notify' },
