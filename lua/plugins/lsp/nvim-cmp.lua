@@ -16,6 +16,7 @@ local before = function(entry, vim_item)
 	end
 
 cmp.setup({
+	preselect = cmp.PreselectMode.None,
     snippet = {
         -- 必须指定代码片段引擎
         expand = function(args)
