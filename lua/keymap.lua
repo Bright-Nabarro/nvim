@@ -87,46 +87,44 @@ pluginKeys.cmp = function(cmp)
 end
 
 --lsp
-pluginKeys.maplsp = function(client, bufnr)
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-    local bufopts = { noremap = true, silent = true, buffer = bufnr }
-    --转到声明
-    set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    --转到定义
-    set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    --签名显示
-    set('n', 'gh', vim.lsp.buf.hover, bufopts)
-    --转到实现
-    set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    --
-    set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-    set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-    set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-    --重命名
-    set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-    -- 转到引用
-    set('n', 'gr', vim.lsp.buf.references, bufopts)
-    -- 打开诊断窗口
-    set('n', '<leader>a', vim.diagnostic.open_float, opt)
-	-- 内联提示
-	set('n', '<space><space>', function()
-		    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-		end, opt)
-    --格式化
-    -- 设置格式化选中的范围
-    vim.keymap.set('v', '<leader><leader>', function()
-        -- 使用 vim.lsp.buf.format 对选中的代码进行格式化
-        vim.lsp.buf.format({ range = {
-            start = {vim.fn.line("v"), vim.fn.col("v")},
-            ["end"] = {vim.fn.line("."), vim.fn.col(".")} }
-    	})
-		end, opts
-	)
-	vim.keymap.set('n', '<leader>f', function()
-			vim.lsp.buf.format()
-		end,
-	opts)
-end
+local bufopts = { noremap = true, silent = true, buffer = bufnr }
+local lsp = vim.lsp
+--转到声明
+set('n', 'gD', lsp.buf.declaration, opt)
+--转到定义
+set('n', 'gd', lsp.buf.definition, opt)
+--签名显示
+set('n', 'gh', vim.lsp.buf.hover, bufopts)
+--转到实现
+set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+--
+set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+--重命名
+set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+-- 转到引用
+set('n', 'gr', vim.lsp.buf.references, bufopts)
+-- 打开诊断窗口
+set('n', '<leader>a', vim.diagnostic.open_float, opt)
+-- 内联提示
+set('n', '<space><space>', function()
+	    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+	end, opt)
+--格式化
+-- 设置格式化选中的范围
+vim.keymap.set('v', '<leader><leader>', function()
+    -- 使用 vim.lsp.buf.format 对选中的代码进行格式化
+    vim.lsp.buf.format({ range = {
+        start = {vim.fn.line("v"), vim.fn.col("v")},
+        ["end"] = {vim.fn.line("."), vim.fn.col(".")} }
+	})
+	end, opts
+)
+vim.keymap.set('n', '<leader>f', function()
+		vim.lsp.buf.format()
+	end,
+opts)
 
 --nvim-gdb
 map('n', '<leader>b', '<Cmd>GdbBreakpointToggle<Cr>', opt)
