@@ -299,7 +299,7 @@ local lazyConfig = {
     -- LSP 管理
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
-    { 'neovim/nvim-lspconfig' },
+    -- { 'neovim/nvim-lspconfig' },
 	-- rust补丁
 	--{
 	--  'mrcjkb/rustaceanvim',

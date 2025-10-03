@@ -2,8 +2,8 @@ local on_attach = function(client, bufnr)
     require('keymap').maplsp(client, bufnr)
 end
 
-require('lspconfig').rust_analyzer.setup{
-    on_attach = on_attach,
+vim.lsp.config("rust_analyzer", {
+	on_attach = on_attach,
 	cmd = {"rust-analyzer"}, 
 	filetypes = {"rust"},
 	root_dir = function(fname)
@@ -20,5 +20,4 @@ require('lspconfig').rust_analyzer.setup{
   		  }
   		}
 	}
-}
-
+})

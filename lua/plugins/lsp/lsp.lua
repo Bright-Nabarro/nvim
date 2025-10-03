@@ -26,7 +26,6 @@ local autoServers = {
 	'gopls',
 }
 
-local lspconfig = require('lspconfig')
 
 -- 包装keymap
 local on_attach = function(client, bufnr)
@@ -39,9 +38,9 @@ for _, lsp in ipairs(settingServers) do
 end
 
 for _, lsp in ipairs(autoServers) do
-	require('lspconfig')[lsp].setup{
+	vim.lsp.config(lsp, {
     	on_attach = on_attach,
-	}
+	})
 end
 
 -- 签名边框
