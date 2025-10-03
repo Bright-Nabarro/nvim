@@ -118,10 +118,14 @@ pluginKeys.maplsp = function(client, bufnr)
         -- 使用 vim.lsp.buf.format 对选中的代码进行格式化
         vim.lsp.buf.format({ range = {
             start = {vim.fn.line("v"), vim.fn.col("v")},
-            ["end"] = {vim.fn.line("."), vim.fn.col(".")}
-        }
-    })
-end, opts)
+            ["end"] = {vim.fn.line("."), vim.fn.col(".")} }
+    	})
+		end, opts
+	)
+	vim.keymap.set('n', '<leader>f', function()
+			vim.lsp.buf.format()
+		end,
+	opts)
 end
 
 --nvim-gdb

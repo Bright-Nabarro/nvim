@@ -23,6 +23,7 @@ require('mason-lspconfig').setup({
 
 local autoServers = {
 	'pyright',
+	'gopls',
 }
 
 local lspconfig = require('lspconfig')

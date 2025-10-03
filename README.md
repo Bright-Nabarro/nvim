@@ -21,3 +21,8 @@ nvim/
                 |-- func/
                 |-- lsp/
 ```
+
+# TODO
+### 添加部署脚本
+1. 判断环境, 计划支持 arch, ubuntu, centos, wsl额外功能, mac
+2. 检测当前环境是否满足要求: 系统lua版本, nvim版本(暂时只计划支持动态版本)
