@@ -1,7 +1,8 @@
 local settingServers = {
     'clangd',
-	'cmake',
 	'rust',
+	'go',
+	'python',
 }
 --mason 管理补全插件
 require('mason').setup({
@@ -22,8 +23,6 @@ require('mason-lspconfig').setup({
 })
 
 local autoServers = {
-	'pyright',
-	'gopls',
 }
 
 
@@ -34,13 +33,10 @@ end
 
 --使用手动设置，手动设置文件在lsp/lsp_name中
 for _, lsp in ipairs(settingServers) do
-    require('plugins.lsp.'..lsp)
+    require('plugins.lsp.lang.'..lsp)
 end
 
 for _, lsp in ipairs(autoServers) do
-	vim.lsp.config(lsp, {
-    	on_attach = on_attach,
-	})
 end
 
 -- 签名边框
